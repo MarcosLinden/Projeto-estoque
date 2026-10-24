@@ -2,12 +2,21 @@ produtos = []
 
 
 def cadastrar_produto(nome, preco, quantidade):
-    produto = {'nome': nome, 'preço': preco, 'quantidade': quantidade}
-    for p in produtos:
-        if not p['nome'].lower() == produto['nome'].lower():
-            produtos.append(produto)
-            return produtos
-    return 'Produto já existe'
+    if not produtos:
+        produto = {'nome': nome, 'preço': preco, 'quantidade': quantidade}
+        produtos.append(produto)
+        return produtos
 
-carro = cadastrar_produto('',50000, 1)
+    for p in produtos:
+            if p['nome'].lower() != nome.lower():
+                produto = {'nome': nome, 'preço': preco, 'quantidade': quantidade}
+                produtos.append(produto)
+                return produtos
+            return 'Produto já existe'
+
+carro = cadastrar_produto('forza',50000, 1)
+carro2 = cadastrar_produto('forza',50000, 1)
+
 print(carro)
+print(carro2)
+
