@@ -9,3 +9,5 @@ def cadastrar_produto(nome, preco, quantidade):
             return produtos
     return 'Produto já existe'
 
+carro = cadastrar_produto('',50000, 1)
+print(carro)
